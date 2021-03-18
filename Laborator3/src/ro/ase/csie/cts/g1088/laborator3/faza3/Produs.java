@@ -12,6 +12,17 @@ public class Produs {
 	private InterfataMarketing serviciuMk = null;
 	private InterfataValidare serviciuValidare = null;
 	
+	public Produs() {
+		for (Object serviciu: TestProdus.servicii) {
+			if (serviciu instanceof InterfataMarketing) {
+				this.serviciuMk = (InterfataMarketing) serviciu;
+			}
+		}
+		if (this.serviciuMk == null) {
+			throw new NullPointerException();
+		}
+	}
+	
 	public Produs(InterfataMarketing mk, InterfataValidare validare) {
 		this.setStrategieMarketing(mk);
 		this.setServiciuValidari(validare);
