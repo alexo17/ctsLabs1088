@@ -22,6 +22,7 @@ public class TestDecorator {
 		
 		dragon = new DecoratorEsteRanit(dragon);
 		dragon.esteLovit(400);
+		dragon.alearga();
 	}
 
 }
