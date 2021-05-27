@@ -78,8 +78,12 @@ public class Student {
 		
 	}
 
-    public int getNotaMinima() {
-        int min = 0;
+    public int getNotaMinima() {   	
+    	if (note == null || note.size() == 0) {
+    		return 0;
+    	}
+    	
+        int min = note.get(0);
         for(int nota : this.note) {
 			if(min > nota) {
                 min = nota;
