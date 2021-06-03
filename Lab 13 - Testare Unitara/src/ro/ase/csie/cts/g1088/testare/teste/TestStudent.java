@@ -11,11 +11,14 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
 import ro.ase.csie.cts.g1088.testare.exceptii.ExceptieNote;
 import ro.ase.csie.cts.g1088.testare.exceptii.ExceptieNume;
 import ro.ase.csie.cts.g1088.testare.exceptii.ExceptieVarsta;
 import ro.ase.csie.cts.g1088.testare.modele.Student;
+import ro.ase.csie.cts.g1088.testare.teste.categorii.TestImportant;
+import ro.ase.csie.cts.g1088.testare.teste.categorii.TestPerformanta;
 
 public class TestStudent {
 	
@@ -93,6 +96,7 @@ public class TestStudent {
 		student.setNume(numeNou);
 	}
 	
+	@Category({TestPerformanta.class, TestImportant.class})
 	@Test
 	public void testGetNotaMinimaOrderingSetSortatCrescator() throws ExceptieNote {
 		int notaMinima = 4;
@@ -106,6 +110,7 @@ public class TestStudent {
 		assertEquals("Test cu valori sortate crescator", notaMinima, notaMinimaCalculata);
 	}
 
+	@Category(TestImportant.class)
 	@Test
 	public void testGetNotaMinimaCardinalitateZero() throws ExceptieNote {
 		ArrayList<Integer> note = new ArrayList<>();
